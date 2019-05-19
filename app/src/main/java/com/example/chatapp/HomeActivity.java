@@ -1,17 +1,32 @@
 package com.example.chatapp;
 
+import android.graphics.Typeface;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class HomeActivity extends AppCompatActivity {
 
+    TextView textview1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         setContentView(R.layout.activity_home);
+
+        textview1 = (TextView) findViewById(R.id.my_text_1);
+        Typeface myCustomFont1 = Typeface.createFromAsset(getAssets(), "Fonts/ralewaythin.ttf");
+        textview1.setTypeface(myCustomFont1);
 
         if(haveNetwork()){
             //MainFunction

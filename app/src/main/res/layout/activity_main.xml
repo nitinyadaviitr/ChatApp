@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,20 +8,76 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:paddingTop="16dp"
-    android:background="#1E88E5"
+
+
+    android:id="@+id/back"
+    android:background="@drawable/gradient_list"
     >
 
+
+    <!--android:background="@drawable/gradienthomebackground"-->
+<!--
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/chat"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        />
+-->
+
+
     <TextView
+        android:id="@+id/my_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:textAlignment="center"
-        android:gravity="center"
-        android:textColor="#FFFFFF"
-        android:textSize="65sp"
-        android:id="@+id/my_text"
+        android:layout_centerInParent="true"
         android:layout_gravity="center_vertical"
-        android:layout_centerInParent="true" />
+        android:gravity="center"
+        android:text="@string/logo"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="100sp" />
+
+    <TextView
+        android:id="@+id/my_text_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/my_text"
+        android:layout_alignEnd="@+id/my_text"
+        android:layout_alignRight="@+id/my_text"
+        android:layout_centerHorizontal="false"
+        android:layout_gravity="center"
+        android:layout_marginTop="-10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="13dp"
+        android:gravity="center"
+        android:text="@string/logob"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+
+<!--    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/my_text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+
+        android:minHeight="10dip"
+        android:progress="20"/>-->
+
+
+    <!--    <TextView
+            android:layout_width="301dp"
+            android:layout_height="253dp"
+            android:background="@drawable/circle"
+            android:gravity="center"
+            android:layout_gravity="center_vertical"
+            android:layout_centerInParent="true" />-->
 
 
 </RelativeLayout>
