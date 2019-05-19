@@ -2,5 +2,6 @@
     <string name="app_name">ChatApp</string>
     <string name="logo">tap chat!</string>
     <string name="logob">never get bored!</string>
+    <string name="title_activity_chattab">chattab</string>
 
 </resources>

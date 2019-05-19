@@ -1,18 +1,23 @@
 package com.example.chatapp;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class HomeActivity extends AppCompatActivity {
 
-    TextView textview1;
+    TextView textview;
+
+    private Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,17 +29,36 @@ public class HomeActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_home);
 
-        textview1 = (TextView) findViewById(R.id.my_text_1);
-        Typeface myCustomFont1 = Typeface.createFromAsset(getAssets(), "Fonts/ralewaythin.ttf");
-        textview1.setTypeface(myCustomFont1);
+        textview = (TextView) findViewById(R.id.my_text_1);
+        Typeface myCustomFont = Typeface.createFromAsset(getAssets(), "Fonts/ralewaythin.ttf");
+        textview.setTypeface(myCustomFont);
 
         if(haveNetwork()){
             //MainFunction
+            button = (Button) findViewById(R.id.my_text_1);
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    openChat();
+                }
+            });
         }
         else if(!haveNetwork()){
-            Toast.makeText( HomeActivity.this, "Please connect to Internet", Toast.LENGTH_LONG).show();
+            button = (Button) findViewById(R.id.my_text_1);
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText( HomeActivity.this, "Please connect to Internet", Toast.LENGTH_LONG).show();
+                }
+            });
         }
     }
+
+    public void openChat(){
+        Intent intent = new Intent(this, chattab.class);
+        startActivity(intent);
+    }
+
     private boolean haveNetwork()
     {
         boolean have_wifi = false;
